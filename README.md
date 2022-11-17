@@ -7,6 +7,15 @@
 Fizemos este projeto visando quem quer se aprofundar mais em [discord.js](https://discord.js.org/#/) e JavaScript. Combinamos as melhores
 práticas do JavaScript para criar um bot simples e funcional que possui muitas funções inscriveis!
 
+## Instalação
+
+```
+npm init
+npm i discord.js --save
+npm i glob@7.2.0 --save
+npm i util@0.12.4 --save
+```
+
 ## Contribuições
 
 Aceitaremos Pull Requests desde que tenham algum sentido e não sejam gambiarra. Se quiser começar a participar de projetos open-source como este, entre em contato em nosso servidor do Discord.
