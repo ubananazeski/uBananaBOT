@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const { Client, Intents, GatewayIntentBits, PermissionFlagsBits } = require('discord.js');
+const { Client, Intents, GatewayIntentBits, ActivityType, PermissionFlagsBits } = require('discord.js');
 const { EmbedBuilder, ActionRowBuilder, ButtonBuilder } = require("discord.js")
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 const config = require("./config.json");
@@ -19,15 +19,11 @@ const { promisify } = require("util");
 const globPromise = promisify(glob);
 
 client.once('ready', async () => {
-    console.log("✅ - Logado em " + client.user.username + " com sucesso!")
-    let idoi = 'online' //idle, dnd, online, invisible
-    let atividade = `PLAYING` //WATCHING, LISTENING, PLAYING, STREAMING
-    let tempo = 5000 // tempo de troca em milisegundos
-    let activities = [`Ubanana`];
-
-    i = 0;
-    setInterval(() => client.user.setActivity(`${activities[i++ % activities.length]}`, { type: atividade }), tempo);
-    client.user.setStatus(`${idoi[Math.floor(Math.random() * idoi.length)]}`)
+    console.log(`✅ - Logado em ${client.user.username} com sucesso! Estou em ${client.guilds.cache.size} servidores!`)
+    client.user.setPresence({
+        activities: [{ name: `15 comandos para ${client.guilds.cache.size} servidores!`, type: ActivityType.Playing }],
+        status: 'idle',
+      });
 })
 
 
